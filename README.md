@@ -1,7 +1,7 @@
 # ModBus-Cobot UR5-Arkite
 
 <p align="center">
-    <img src="images/arkite-cobot-modbus.jpg" width="50%">
+    <img src="images/arkite-cobot-modbus.jpg" width="70%">
 </p>
 
 ## Arkite’s Operator Guidance Platform
@@ -37,16 +37,18 @@ So **MODBUS TCP/IP** means:
 - **Arkite OOS (Operator Support System)**: Acts as the **MODBUS TCP Client**.
 - **UR5 Cobot**: Acts as the **MODBUS TCP Server**.
 - **Communication Protocol**: MODBUS TCP/IP over Ethernet.
+- **Server adress Robot IP:502**
 
 <p align="center">
     <img src="images/Arkite_UR5_Modbus_Schema.jpg" width="50%">
 </p>
 
 
+
 **2. Communication Flow:**
 
 **Step 1 – Command Transmission:**
-- The Arkite OOS sends a **movement command** or **action request** to the UR5 robot.
+- The Arkite sends a **movement command** or **action request** to the UR5 robot.
 - This command is written into the **holding register 128** on the UR5 server.
   - Example: `Register 128 = 101` (Move to Position 1)
 
@@ -80,22 +82,7 @@ So **MODBUS TCP/IP** means:
   3. Executes corresponding robot motions.
   4. Writes back the completion or status to register 133.
 
-**5. Communication Timing Diagram (Simplified):**
-
-```
-Arkite (Client)              UR5 (Server)
-     |                            |
-     | Write: Command(128=101)    |
-     |--------------------------->|
-     |                            |  [Thread detects new command]
-     |                            |  Execute Move(Position1)
-     |                            |  Write Result(133=1)
-     |<---------------------------|
-     | Read: Status(133=1)        |
-     |                            |
-```
-
-**6. Optional Enhancements:**
+**5. Optional Enhancements:**
 - Add additional registers for:
   - Error codes
   - Real-time position feedback
