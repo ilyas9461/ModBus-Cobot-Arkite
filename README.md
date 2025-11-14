@@ -1,5 +1,37 @@
-# ModBus-Cobot-Arkite
-**Working Schema Explanation: Arkite OOS ↔ UR5 Cobot (via MODBUS TCP/IP)**
+# ModBus-Cobot UR5-Arkite
+
+<p align="center">
+    <img src="images/arkite-cobot-modbus.jpg" width="50%">
+</p>
+
+## Arkite’s Operator Guidance Platform
+The Operator Guidance Platform from Arkite is a manufacturing-software + hardware system designed to support manual workstations in factories by using augmented reality (AR) and smart sensors. It essentially transforms a manual assembly or workbench area into a digital-interactive environment.
+
+## What Is the UR5 Cobot?
+
+- The UR5 is a collaborative robot (cobot) made by Universal Robots, a leading manufacturer of lightweight robot arms.
+- Collaboration means it’s designed to work safely around humans: it has built-in force sensing and safety features. 
+- It’s a 6-axis robot arm.
+
+## What is the MODBUS TCP/IP?
+MODBUS TCP/IP is a communication protocol used in industry to let machines, sensors, robots, PLCs, and software exchange data over an Ethernet network.
+
+It is one of the most common and simplest industrial communication standards.
+
+MODBUS TCP/IP = MODBUS protocol + TCP/IP network.
+
+MODBUS → a very old and simple protocol where devices read and write data in registers.
+
+TCP/IP → the standard internet/Ethernet network system.
+
+So **MODBUS TCP/IP** means:
+
+- ➡️ You send numerical values to a device (like a robot)
+- ➡️ The device reads them from holding registers
+- ➡️ The device also writes information back in other registers
+- ➡️ All this happens over Ethernet (CAT5/CAT6 cable) using IP addresses.
+
+**Working Schema Explanation: Arkite ↔ UR5 Cobot (via MODBUS TCP/IP)**
 
 **1. System Overview:**
 - **Arkite OOS (Operator Support System)**: Acts as the **MODBUS TCP Client**.
@@ -72,6 +104,5 @@ Arkite (Client)              UR5 (Server)
 
 ---
 
-Would you like me to generate a **.drawio file** that visually represents this communication flow with all components (Arkite, UR5, MODBUS TCP/IP, registers, and thread process)?
 
 
