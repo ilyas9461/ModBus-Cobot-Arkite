@@ -41,7 +41,7 @@ So **MODBUS TCP/IP** means:
 - **Dashboard server (Ethernet (TCP/IP))** -> **Robot IP:29999**
 
 <p align="center">
-    <img src="images/Arkite_UR5_Modbus_Schema.jpg" width="50%">
+    <img src="images/Arkite_UR5_Modbus_Schema.jpg" width="65%">
 </p>
 
 **2. Communication Flow for Dashboard Server:**
