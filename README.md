@@ -31,21 +31,39 @@ So **MODBUS TCP/IP** means:
 - ➡️ The device also writes information back in other registers
 - ➡️ All this happens over Ethernet (CAT5/CAT6 cable) using IP addresses.
 
-**Working Schema Explanation: Arkite ↔ UR5 Cobot (via MODBUS TCP/IP)**
+**Working Schema Explanation: Arkite ↔ UR5 Cobot**
 
 **1. System Overview:**
 - **Arkite OOS (Operator Support System)**: Acts as the **MODBUS TCP Client**.
 - **UR5 Cobot**: Acts as the **MODBUS TCP Server**.
 - **Communication Protocol**: MODBUS TCP/IP over Ethernet.
-- **Server adress Robot IP:502**
+- **Server adress** -> **Robot IP:502**
+- **Dashboard server (Ethernet (TCP/IP))** -> **Robot IP:29999**
 
 <p align="center">
     <img src="images/Arkite_UR5_Modbus_Schema.jpg" width="50%">
 </p>
 
+**2. Communication Flow for Dashboard Server:**
 
+A Universal Robot can be controlled from remote by sending simple commands to the GUI over a TCP/IP socket. This interface is called the "DashBoard server". The server is running on port 29999 on the robots IP address. Each command should be terminated by a ‘\n’ also called a newline.
 
-**2. Communication Flow:**
+**The main functions of the Dashboard Server are:**
+
+- **Load:** Load a robot program.
+- **Play:** Start the execution of a robot program.
+- **Pause:** Pause the execution of a robot program.
+- **Stop:** Stop the execution of a robot program.
+- **Set User Access Level:** Change the user access level.
+- **Receive Feedback:** Receive feedback about the robot state.
+
+**Command Transmission:**
+- Connect to the dashboard server from IP:29999.
+- Send command to the robot and wait response.
+
+The sample communication python scrip in the "ur-dashboard-script" directory.
+
+**3. Communication Flow for MODBUS Server:**
 
 **Step 1 – Command Transmission:**
 - The Arkite sends a **movement command** or **action request** to the UR5 robot.
@@ -90,6 +108,8 @@ So **MODBUS TCP/IP** means:
 - Use proper synchronization in the UR5 thread to prevent data race.
 
 ---
+
+# Application : Arkite project and Cobot programming
 
 
 
