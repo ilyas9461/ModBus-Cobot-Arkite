@@ -114,10 +114,13 @@ The sample communication python script is in the [ur-dashboard-script](./ur-dash
 
 ## 1- Arkite Project with MODBUS and TCP/IP
 
+<p align="center">
+<img src="images/arkite-modbus-conf.jpg" width="40%">
+</p>
+
+<p align="center">
+<img src="images/Receive cmd modbus.jpg" width="40%">
+</p>
 
 
-<img src="images/arkite-modbus-conf.jpg" style="float:left; margin-right:16px; max-width:48%; height:auto;">
 
-First of all, I configured Arkite Connectivity according to both communication protocols. The configurations here:
-
-<div style="clear:both;"></div>
