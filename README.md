@@ -122,5 +122,9 @@ The sample communication python script is in the [ur-dashboard-script](./ur-dash
 <img src="images/Receive cmd modbus.jpg" width="75%">
 </p>
 
+<p align="center">
+<img src="images/arkite-dashboard-process.jpg" width="75%">
+</p>
+
 
 
