@@ -115,7 +115,7 @@ The sample communication python script is in the [ur-dashboard-script](./ur-dash
 ## 1- Arkite Project with MODBUS and TCP/IP
 
 <p align="center">
-<img src="images/arkite-modbus-conf.jpg" width="75%">
+<img src="images/Arkite-modbus-conf.jpg" width="75%">
 </p>
 
 <p align="center">
