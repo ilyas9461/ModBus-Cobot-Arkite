@@ -1,15 +1,16 @@
-# ModBus-Cobot UR5-Arkite
-
+# Arkite Operator Guidance Platform with Cobot UR5 Robot
+In this project, I attempted to connect the Arkite OSS to a Cobot robot within the same project. Both systems worked on the same project. I used MODBUS and TCP/IP communication protocols for this. The project consisted of simple steps for both systems. On the Arkite side, I used a projector and a screen to display digital instructions to the workers. The Cobot performed simple movements in various directions. Both systems communicated using MODBUS and TCP/IP protocols.
+Working on two different platforms was truly enjoyable for me.
 <p align="center">
     <img src="images/arkite-cobot-modbus.jpg" width="70%">
 </p>
 
 ## Arkite’s Operator Guidance Platform
 The Operator Guidance Platform from Arkite is a manufacturing-software + hardware system designed to support manual workstations in factories by using augmented reality (AR) and smart sensors. It essentially transforms a manual assembly or workbench area into a digital-interactive environment.
-
+(https://arkite.com/)
 ## What Is the UR5 Cobot?
 
-- The UR5 is a collaborative robot (cobot) made by Universal Robots, a leading manufacturer of lightweight robot arms.
+- The UR5 is a collaborative robot (Cobot) made by Universal Robots, a leading manufacturer of lightweight robot arms.
 - Collaboration means it’s designed to work safely around humans: it has built-in force sensing and safety features. 
 - It’s a 6-axis robot arm.
 
@@ -34,19 +35,19 @@ So **MODBUS TCP/IP** means:
 **Working Schema Explanation: Arkite ↔ UR5 Cobot**
 
 **1. System Overview:**
-- **Arkite OOS (Operator Support System)**: Acts as the **MODBUS TCP Client**.
+- **Arkite OSS (Operator Support System)**: Acts as the **MODBUS TCP Client**.
 - **UR5 Cobot**: Acts as the **MODBUS TCP Server**.
 - **Communication Protocol**: MODBUS TCP/IP over Ethernet.
 - **Server adress** -> **Robot IP:502**
 - **Dashboard server (Ethernet (TCP/IP))** -> **Robot IP:29999**
 
 <p align="center">
-    <img src="images/Arkite_UR5_Modbus_Schema.jpg" width="65%">
+    <img src="images/Arkite_UR5_Modbus_Schema.jpg" width="75%">
 </p>
 
 **2. Communication Flow for Dashboard Server:**
 
-A Universal Robot can be controlled from remote by sending simple commands to the GUI over a TCP/IP socket. This interface is called the "DashBoard server". The server is running on port 29999 on the robots IP address. Each command should be terminated by a ‘\n’ also called a newline.
+A Universal Robot can be controlled from remote by sending simple commands to the GUI over a TCP/IP socket. This interface is called the "Dashboard server". The server is running on port 29999 on the robots IP address. Each command should be terminated by a ‘\n’ also called a newline.
 
 **The main functions of the Dashboard Server are:**
 
@@ -61,7 +62,7 @@ A Universal Robot can be controlled from remote by sending simple commands to th
 - Connect to the dashboard server from IP:29999.
 - Send command to the robot and wait response.
 
-The sample communication python scrip in the "ur-dashboard-script" directory.
+The sample communication python script is in the [ur-dashboard-script](./ur-dashboard-script) directory.
 
 **3. Communication Flow for MODBUS Server:**
 
@@ -111,5 +112,5 @@ The sample communication python scrip in the "ur-dashboard-script" directory.
 
 # Application : Arkite project and Cobot programming
 
-
+## 1- Arkite Project with MODBUS and TCP/IP
 
